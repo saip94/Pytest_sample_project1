@@ -4,4 +4,4 @@ ADD . /pytest-container-demo1/
 WORKDIR /pytest-container-demo1/
 RUN pip install --upgrade pip
 RUN pip3 install -r requirements.txt
-ENTRYPOINT pytest -s -v .\Testcases\test_searching.py --disable-warnings
+RUN pytest -s -v .\Testcases\test_searching.py --disable-warnings
