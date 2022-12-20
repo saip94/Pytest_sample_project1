@@ -20,5 +20,14 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile saibhagavan76/pytest-container-demo-1.0
+    -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+    -
+        name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/clockbox:latest
