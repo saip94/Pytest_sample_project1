@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag saibhagavan76/pytest-container-demo-1.0
+      run: docker build . --file Dockerfile saibhagavan76/pytest-container-demo-1.0
